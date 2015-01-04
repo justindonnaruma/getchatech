@@ -1,0 +1,206 @@
+html
+  body
+    // WRAPPER
+    #wrapper
+      #blog
+        // PAGE TITLE
+        header#page-title
+          .container
+            h1 Atropos Blog
+            ul.breadcrumb
+              li
+                a(href='index.html') Home
+              li.active Blog
+        section.container
+          .row
+            .col-md-3
+              // blog search
+              .widget
+                h3 BLOG SEARCH
+                form.input-group(method='get', action='blog-left-sidebar.html#')
+                  input#s.form-control(type='text', name='s', value='', placeholder='search...')
+                  span.input-group-btn
+                    button.btn.btn-primary
+                      i.fa.fa-search
+              // recent work
+              .widget
+                h4 RECENT WORK
+                a.popup-image.thumb(href='http://theme.stepofweb.com/Atropos/v1.2/HTML/assets/images/preview/slider/1.jpg')
+                  img.img-responsive(src='assets/images/1x1.png', data-src='holder.js/85x85/#888:#555555/auto/', alt='img')
+                a.popup-video.thumb(href='http://www.youtube.com/watch?v=kh29_SERH0Y?rel=0')
+                  img.ajax-project.img-responsive(src='assets/images/1x1.png', data-src='holder.js/85x85/#676767:#555555/auto/', alt='img')
+                a.popup-video.thumb(href='http://vimeo.com/23630702')
+                  img.ajax-project.img-responsive(src='assets/images/1x1.png', data-src='holder.js/85x85/#888:#555555/auto/', alt='img')
+                a.external.ajax-project.thumb(href='http://theme.stepofweb.com/Atropos/v1.2/HTML/project-external-1.html')
+                  img.ajax-project.img-responsive(src='assets/images/1x1.png', data-src='holder.js/85x85/#676767:#555555/auto/', alt='img')
+                a.external.ajax-project.thumb(href='http://theme.stepofweb.com/Atropos/v1.2/HTML/project-external-2.html')
+                  img.ajax-project.img-responsive(src='assets/images/1x1.png', data-src='holder.js/85x85/#888:#555555/auto/', alt='img')
+                a.external.ajax-project.thumb(href='http://theme.stepofweb.com/Atropos/v1.2/HTML/project-external-3.html')
+                  img.ajax-project.img-responsive(src='assets/images/1x1.png', data-src='holder.js/85x85/#676767:#555555/auto/', alt='img')
+                .clearfix
+              // categories
+              .widget
+                h4 CATEGORIES
+                ul.nav.nav-list
+                  li
+                    a(href='blog-left-sidebar.html#')
+                      i.fa.fa-circle-o
+                      | Photos
+                  li
+                    a(href='blog-left-sidebar.html#')
+                      i.fa.fa-circle-o
+                      | Videos
+                  li
+                    a(href='blog-left-sidebar.html#')
+                      i.fa.fa-circle-o
+                      | Photoshop
+                  li
+                    a(href='blog-left-sidebar.html#')
+                      i.fa.fa-circle-o
+                      | Development
+                  li
+                    a(href='blog-left-sidebar.html#')
+                      i.fa.fa-circle-o
+                      | Technology
+              // recent posts
+              .widget
+                h4 RECENT POSTS
+                ul
+                  li
+                    a(href='blog-post.html')
+                      i.fa.fa-sign-out
+                      | This is a Gallery Post
+                    small 23 June 2013 / 12:43
+                  li
+                    a(href='blog-post.html')
+                      i.fa.fa-sign-out
+                      | Blog Post With Text Only
+                    small 23 June 2013 / 12:43
+                  li
+                    a(href='blog-post.html')
+                      i.fa.fa-sign-out
+                      | This is an Audio Post
+                    small 23 June 2013 / 12:43
+                  li
+                    a(href='blog-post.html')
+                      i.fa.fa-sign-out
+                      | This is a Video Post
+                    small 23 June 2013 / 12:43
+                  li
+                    a(href='blog-post.html')
+                      i.fa.fa-sign-out
+                      | An awsome post
+                    small 23 June 2013 / 12:43
+            .col-md-9
+              // blog item
+              .item
+                // article title
+                .item-title
+                  h2
+                    a(href='blog-post.html') This is an Image Post
+                  a.label.label-default.light(href='http://theme.stepofweb.com/Atropos/v1.2/HTML/blog.html')
+                    i.fa.fa-dot-circle-o
+                    | Business
+                  a.scrollTo.label.label-default.light(href='blog-post.html#comments')
+                    i.fa.fa-comment-o
+                    | 3 Comments
+                  span.label.label-default.light June 29, 2014
+                // image
+                figure
+                  img.img-responsive(src='assets/images/demo/blog.jpg', alt='img')
+                // blog short preview
+                p
+                  | Praesent augue arcu, ornare ut tincidunt eu, mattis a libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In elit purus, ullamcorper vel luctus vitae, venenatis eu odio. Vivamus tincidunt, urna quis consectetur venenatis, quam urna tincidunt mi, quis convallis enim dolor sed elit. Pellentesque ultricies congue lacus, eget elementum erat lobortis et. Sed non velit neque.
+                // read more button
+                a.btn.btn-xs(href='blog-post.html')
+                  i.fa.fa-sign-out
+                  | READ MORE
+              // /blog item
+              // blog item
+              .item
+                // article title
+                .item-title
+                  h2
+                    a(href='blog-post.html') This is a Video Post
+                  a.label.label-default.light(href='http://theme.stepofweb.com/Atropos/v1.2/HTML/blog.html')
+                    i.fa.fa-dot-circle-o
+                    | Business
+                  a.scrollTo.label.label-default.light(href='blog-post.html#comments')
+                    i.fa.fa-comment-o
+                    | 3 Comments
+                  span.label.label-default.light June 29, 2014
+                // vido
+                iframe.fitvids(src='https://player.vimeo.com/video/70984663', width='800', height='450')
+                // blog short preview
+                p
+                  | Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                // read more button
+                a.btn.btn-xs(href='blog-post.html')
+                  i.fa.fa-sign-out
+                  | READ MORE
+              // /blog item
+              // blog item
+              .item
+                // article title
+                .item-title
+                  h2
+                    a(href='blog-post.html') Blog Post With Text Only
+                  a.label.label-default.light(href='http://theme.stepofweb.com/Atropos/v1.2/HTML/blog.html')
+                    i.fa.fa-dot-circle-o
+                    | Business
+                  a.scrollTo.label.label-default.light(href='blog-post.html#comments')
+                    i.fa.fa-comment-o
+                    | 3 Comments
+                  span.label.label-default.light June 29, 2014
+                // blog short preview
+                p
+                  | Praesent augue arcu, ornare ut tincidunt eu, mattis a libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In elit purus, ullamcorper vel luctus vitae, venenatis eu odio. Vivamus tincidunt, urna quis consectetur venenatis, quam urna tincidunt mi, quis convallis enim dolor sed elit. Pellentesque ultricies congue lacus, eget elementum erat lobortis et. Sed non velit neque.
+                // read more button
+                a.btn.btn-xs(href='blog-post.html')
+                  i.fa.fa-sign-out
+                  | READ MORE
+              // /blog item
+              // blog item
+              .item
+                // article title
+                .item-title
+                  h2
+                    a(href='blog-post.html') This is an Audio Post
+                  a.label.label-default.light(href='http://theme.stepofweb.com/Atropos/v1.2/HTML/blog.html')
+                    i.fa.fa-dot-circle-o
+                    | Business
+                  a.scrollTo.label.label-default.light(href='blog-post.html#comments')
+                    i.fa.fa-comment-o
+                    | 3 Comments
+                  span.label.label-default.light June 29, 2014
+                // audio
+                iframe.fullwidth(height='166', src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/62974792&color=ff6600&auto_play=false&show_artwork=true')
+                // blog short preview
+                p
+                  | Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
+                // read more button
+                a.btn.btn-xs(href='blog-post.html')
+                  i.fa.fa-sign-out
+                  | READ MORE
+              // /blog item
+              // PAGINATION
+              .text-center
+                ul.pagination
+                  li
+                    a(href='blog-left-sidebar.html#')
+                      i.fa.fa-chevron-left
+                  li.active
+                    a(href='blog-left-sidebar.html#') 1
+                  li
+                    a(href='blog-left-sidebar.html#') 2
+                  li
+                    a(href='blog-left-sidebar.html#') 3
+                  li
+                    a(href='blog-left-sidebar.html#') 4
+                  li
+                    a(href='blog-left-sidebar.html#') 5
+                  li
+                    a(href='blog-left-sidebar.html#')
+                      i.fa.fa-chevron-right
+              // /PAGINATION
+    // /WRAPPER

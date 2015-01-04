@@ -1,0 +1,176 @@
+include ../mixins/flash-messages
+doctype html
+//if IE 8
+  html.ie.ie8
+//if IE 9
+  html.ie.ie9
+// [if gt IE 9] <!
+html
+    // <![endif]
+    head
+        meta(charset='utf-8')
+        title Getch A Tech
+        meta(name='keywords', content='Managed,Security,Technology,Web Development')
+        meta(name='description', content='')
+        meta(name='Author', content='Justin Donnaruma [www.rumatec.us]')
+        meta(name='wot-verification', content='e43a7faf4abee1581ddf')
+        // mobile settings
+        meta(name='viewport', content='width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0')
+        // WEB FONTS
+        link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800', rel='stylesheet', type='text/css')
+        // CORE CSS
+        link(href='/styles/bootstrap.min.css', rel='stylesheet', type='text/css')
+        link(href='/styles/font-awesome.css', rel='stylesheet', type='text/css')
+        link(href='/styles/owl.carousel.css', rel='stylesheet', type='text/css')
+        link(href='/styles/owl.theme.css', rel='stylesheet', type='text/css')
+        link(href='/styles/owl.transitions.css', rel='stylesheet', type='text/css')
+        link(href='/styles/magnific-popup.css', rel='stylesheet', type='text/css')
+        link(href='/styles/animate.css', rel='stylesheet', type='text/css')
+        link(href='/styles/superslides.css', rel='stylesheet', type='text/css')
+        link(href='/styles/settings.css', rel='stylesheet', type='text/css')
+        // THEME CSS
+        link(href='/styles/essentials.css', rel='stylesheet', type='text/css')
+        link(href='/styles/layout.css', rel='stylesheet', type='text/css')
+        link(href='/styles/layout-responsive.css', rel='stylesheet', type='text/css')
+        link(href='/styles/orange.css', rel='stylesheet', type='text/css', title='pink')
+        // Morenizr
+        script(type='text/javascript', src='/js/modernizr.min.js')
+        if user && user.canAccesskeystone
+            link(href="/styles/content/editor.min.css", rel="stylesheet")
+            //- Add any other template-specific HEAD tags by extending the head block
+        block head
+            //- HTML BODY
+    body
+      // Available classes for body: boxed , pattern1...pattern10 . Background Image - example add: data-background="/keystone/images/boxed_background/1.jpg"
+      // TOP NAV
+      header#topNav
+          .container
+              // Mobile Menu Button
+              button.btn(data-toggle='collapse', data-target='.nav-main-collapse')
+                  i.fa.fa-bars
+              // Logo text or image
+              a.logo(href='/')
+                  img(src='/images/logo.png', alt='Rumatec')
+              // Top Nav
+              .navbar-collapse.nav-main-collapse.collapse.pull-right
+                  nav.nav-main.mega-menu
+                      ul#topMain.nav.nav-pills.nav-main.scroll-menu
+                          each link in navLinks
+                              li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
+                          if user
+                              if user.canAccesskeystone
+                                  li: a(href='/keystone') Open keystone
+                              li: a(href='/signout') Sign Out
+                          else
+                              li: a(href='/signin') Sign In
+              // /Top Nav
+      span#header_shadow
+      // /TOP NAV
+          //- BODY
+      #body
+          //- NOTE:
+          //- There is no .container wrapping class around body blocks to allow more flexibility in design.
+          //- Remember to include it in your templates when you override the intro and content blocks!
+         //- The Intro block appears above flash messages (used for temporary information display)
+      block intro
+              //- Flash messages allow you to display once-off status messages to users, e.g. form
+          //- validation errors, success messages, etc.
+              //- The content block should contain the body of your template's content
+      block content
+              // FOOTER
+      footer
+          // copyright , scrollTo Top
+          .footer-bar
+              .container
+                  span.copyright Copyright &copy; 2014 - 
+                    a(href="www.rumatec.us")
+                      | Rumatec
+                    |  . All Rights Reserved.
+                  a.toTop(href='#topNav')
+                      | BACK TO TOP
+                      i.fa.fa-arrow-circle-up
+          // copyright , scrollTo Top
+          // footer content
+          .footer-content
+              .container
+                  .row
+                      // FOOTER CONTACT INFO
+                      .column.col-md-4
+                          h3 CONTACT
+                          p.contact-desc
+                              | Getch A Tech can get your Apple and Windows systems back up and running in a Flash!
+                          address.font-opensans
+                              ul
+                                  li.footer-sprite.address
+                                      | XXX Some Street
+                                      br
+                                      | Lisbon Falls, ME 04XXX
+                                      br
+                                  li(style='color: #9c9fa2')
+                                      span(style='font-size:18px;')
+                                          i.fa.fa-users &NonBreakingSpace; &NonBreakingSpace;
+                                          a(href='https://plus.google.com/u/0/113903137272182221529/posts')
+                                              i.fa.fa-google-plus
+                                          a(href='https://www.facebook.com/rumatc.us')
+                                              i.fa.fa-facebook
+                                          a(href='https://www.linkedin.com/company/rumatech')
+                                              i.fa.fa-linkedin
+                                          a(href='https://twitter.com/Rumatec')
+                                              i.fa.fa-twitter
+                                          a(href='https://github.com/rumatec')
+                                              i.fa.fa-github
+                                  br
+                                  li.footer-sprite.phone
+                                      | Phone: 1.207.619.3414
+                                  li.footer-sprite.email
+                                      a(href='mailto:info@rumate.ch') info@getch-a-tech.com
+                      // /FOOTER CONTACT INFO
+                      // FOOTER LOGO
+                      .column.logo.col-md-4.text-center
+                          .logo-content
+                              img.animate_fade_in(src='/images/logo_footer.png', width='300', alt='')
+                      // /FOOTER LOGO
+                      // Featured POSTS
+                      .column.col-md-4.text-right
+                          h3 Featured POSTS
+                          .post-item
+                              small April 21, 2014
+                              h3
+                                  a(href='http://blog.rumatec.us/welcome-to-rumatec') A brief introduction to Getch A Tech.
+                          .post-item
+                              small Coming Soon
+                              h3
+                                  a(href='http://blog.rumatec.us') Coming Soon
+                          .post-item
+                              small Coming Soon
+                              h3
+                                  a(href='http://blog.rumatec.us') Coming Soon
+                          .post-item
+                              small Coming Soon
+                              h3
+                                  a(href='http://blog.rumatec.us') Coming Soon
+                          a.view-more.pull-right(href='/blog')
+                              | View Blog
+                              i.fa.fa-arrow-right
+                      // /FOOTER LATEST POSTS
+          // footer content
+      // /FOOTER
+      // JAVASCRIPT FILES
+      script(type='text/javascript', src='/js/jquery-2.0.3.min.js')
+      script(type='text/javascript', src='/js/jquery.easing.1.3.js')
+      script(type='text/javascript', src='/js/jquery.cookie.js')
+      script(type='text/javascript', src='/js/jquery.appear.js')
+      script(type='text/javascript', src='/js/jquery.isotope.js')
+      script(type='text/javascript', src='/js/masonry.js')
+      script(type='text/javascript', src='/js/bootstrap.min.js')
+      script(type='text/javascript', src='/js/jquery.magnific-popup.min.js')
+      script(type='text/javascript', src='/js/owl.carousel.min.js')
+      script(type='text/javascript', src='/js/jquery.stellar.min.js')
+      script(type='text/javascript', src='/js/jquery.knob.js')
+      script(type='text/javascript', src='/js/jquery.backstretch.min.js')
+      script(type='text/javascript', src='/js/jquery.superslides.min.js')
+      script(type='text/javascript', src='/js/jquery.themepunch.plugins.min.js')
+      script(type='text/javascript', src='/js/jquery.themepunch.revolution.min.js')
+      script(type='text/javascript', src='/js/slider_revolution.js')
+      script(type='text/javascript', src='/js/scripts.js')
+      block js

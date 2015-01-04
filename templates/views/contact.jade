@@ -1,0 +1,86 @@
+extends ../layouts/default
+block content
+    // WRAPPER
+    #wrapper
+        // PAGE TITLE
+        header#page-title.nopadding
+            #gmap
+                // google map
+        section#contact.container
+            .row
+                .col-md-8
+                    +flash-messages(messages)
+                    // FORM
+                    if enquirySubmitted
+                        h3 Thanks for your submission! 
+                            br 
+                            | We will do our best to get back to you within 1 Business Day!
+                            br
+                            br
+                            | ~ Getch A Tech
+                    else
+                        form(method='post')
+                            input(type='hidden', name='action', value='contact')
+                            .row
+                                .col-md-6
+                                    .form-group(class=validationErrors.name ? 'has-error' : null)
+                                        label Name
+                                        input(type='text', name='name.full', value=formData['name.full'], required).form-control
+                                .col-md-6
+                                    .form-group(class=validationErrors.email ? 'has-error' : null)
+                                        label Email
+                                        input(type='email', name='email', value=formData.email, required).form-control
+                            .row
+                                .col-md-6
+                                    .form-group
+                                        label Phone
+                                        input(type='text', name='phone', value=formData.phone, placeholder='(optional)').form-control
+                                .col-md-6
+                                    .form-group(class=validationErrors.enquiryType ? 'has-error' : null)
+                                        label What are you contacting us about?
+                                        select(name='enquiryType').form-control
+                                            option(value='') (select one)
+                                            each type in enquiryTypes
+                                                option(value=type.value, selected=formData.enquiryType == type.value)= type.label
+                            .form-group(class=validationErrors.message ? 'has-error' : null)
+                                label Message
+                                textarea(name='message', placeholder='Leave us a message...' rows=4).form-control= formData.message
+                            .form-actions
+                                button(type='submit').btn.btn-primary Send
+                // /FORM
+                // INFO
+                .col-md-4
+                    h2 Visit Us
+                    p
+                        | Shoot us an email, use the contact form, or give us a call, we are available for new clients Monday through Friday, 10AM to 6PM.
+                    .divider.half-margins
+                        // divider
+                        i.fa.fa-star
+                    p
+                        span.block
+                            strong
+                                i.fa.fa-map-marker
+                                | Address: 
+                            |  XXX Main St, Lisbon Falls, ME 04XXX
+                        span.block
+                            strong
+                                i.fa.fa-phone
+                                | Phone: 
+                            |  1207.619.3414
+                        span.block
+                            strong
+                                i.fa.fa-envelope
+                                | Email: 
+                             a(href='mailto:info@rumatec.us') info@getch-a-tech.com
+                    .divider.half-margins
+                        // divider
+                        i.fa.fa-star
+                    h4.font300 Business Hours
+                    p
+                        span.block
+                            strong Monday - Friday: 
+                            |  10am to 6pm
+                        span.block
+                            strong Saturday - Sunday: 
+                            |  Closed
+                // /INFO
