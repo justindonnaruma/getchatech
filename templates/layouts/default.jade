@@ -49,8 +49,8 @@ html
               button.btn(data-toggle='collapse', data-target='.nav-main-collapse')
                   i.fa.fa-bars
               // Logo text or image
-              a.logo(href='/')
-                  img(src='/images/logo.png', alt='Rumatec')
+              a.logo(href='/') Getch A Tech
+                  // img(src='/images/logo.png', alt='Getch A Tech')
               // Top Nav
               .navbar-collapse.nav-main-collapse.collapse.pull-right
                   nav.nav-main.mega-menu
@@ -60,9 +60,9 @@ html
                           if user
                               if user.canAccesskeystone
                                   li: a(href='/keystone') Open keystone
-                              li: a(href='/signout') Sign Out
+                              li: a(href='/keystone/signout') Sign Out
                           else
-                              li: a(href='/signin') Sign In
+                              li: a(href='/keystone/signin') Sign In
               // /Top Nav
       span#header_shadow
       // /TOP NAV
@@ -128,7 +128,7 @@ html
                       // FOOTER LOGO
                       .column.logo.col-md-4.text-center
                           .logo-content
-                              img.animate_fade_in(src='/images/logo_footer.png', width='300', alt='')
+                              img.animate_fade_in(src='/images/getchatechman.png', width='300', alt='')
                       // /FOOTER LOGO
                       // Featured POSTS
                       .column.col-md-4.text-right
